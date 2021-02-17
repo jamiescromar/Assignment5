@@ -23,7 +23,14 @@ namespace Assignment5.Controllers
 
         public IActionResult Index()
         {
-            return View(_repository.Projects);
+            if (ModelState.IsValid)
+            {
+                return View(_repository.Projects);
+            }
+            else
+            {
+                return View();
+            } 
         }
 
         public IActionResult Privacy()

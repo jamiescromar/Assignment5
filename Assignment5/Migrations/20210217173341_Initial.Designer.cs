@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Assignment5.Migrations
 {
     [DbContext(typeof(BooklistDbContext))]
-    [Migration("20210217044906_intital")]
-    partial class intital
+    [Migration("20210217173341_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -27,7 +27,15 @@ namespace Assignment5.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Author")
+                    b.Property<string>("AuthorFirst")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AuthorLast")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AuthorMiddle")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

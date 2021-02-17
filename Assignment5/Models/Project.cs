@@ -14,10 +14,15 @@ namespace Assignment5.Models
         [Required]
         public string Title { get; set; }
         [Required]
-        public string Author { get; set; }
+        public string AuthorFirst { get; set; }
+        [Required]
+        public string? AuthorMiddle { get; set; }
+        [Required]
+        public string AuthorLast { get; set; }
         [Required]
         public string Publisher { get; set; }
         [Required]
+        [RegularExpression(@"^[0-9]{3}-[0-9]{10}$", ErrorMessage = "Invalid input for ISBN")]
         public string ISBN { get; set; }
         [Required]
         public string Classification { get; set; }

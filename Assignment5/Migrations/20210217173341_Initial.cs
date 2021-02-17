@@ -2,7 +2,7 @@
 
 namespace Assignment5.Migrations
 {
-    public partial class intital : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,7 +13,9 @@ namespace Assignment5.Migrations
                     BookID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Title = table.Column<string>(nullable: false),
-                    Author = table.Column<string>(nullable: false),
+                    AuthorFirst = table.Column<string>(nullable: false),
+                    AuthorMiddle = table.Column<string>(nullable: false),
+                    AuthorLast = table.Column<string>(nullable: false),
                     Publisher = table.Column<string>(nullable: false),
                     ISBN = table.Column<string>(nullable: false),
                     Classification = table.Column<string>(nullable: false),
