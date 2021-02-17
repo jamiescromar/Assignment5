@@ -8,8 +8,13 @@
 </header>
 @foreach (var x in Model)
 {
-    <div>
-        <h5>@x.Title</h5>
-        <p>@x.Author</p>
-    </div>
+<div>
+    <h5>@x.Title</h5>
+    <p>@x.Author</p>
+    <p>@x.Publisher</p>
+    <p>@x.ISBN</p>
+    <p>@x.Category</p>
+    <p>@x.Classification</p>
+    <p>@x.Price</p>
+</div>
 }
