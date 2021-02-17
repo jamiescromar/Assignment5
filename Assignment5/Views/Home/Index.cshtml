@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Online Bookstore";
+}
+@model IQueryable<Project>
+
+<header>
+
+</header>
+@foreach (var x in Model)
+{
+    <div>
+        <h5>@x.Title</h5>
+        <p>@x.Author</p>
+    </div>
+}
