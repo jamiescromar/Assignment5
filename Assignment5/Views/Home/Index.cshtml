@@ -9,14 +9,12 @@
 @foreach (var x in Model)
 {
 <div>
-    <h5>@x.Title</h5>
-    <p>@x.AuthorFirst</p>
-    <p>@x.AuthorMiddle</p>
-    <p>@x.AuthorLast</p>
-    <p>@x.Publisher</p>
-    <p>@x.ISBN</p>
-    <p>@x.Category</p>
-    <p>@x.Classification</p>
-    <p>@x.Price</p>
+    <h4>Book Title: @x.Title</h4>
+    <h6>Author: @x.AuthorFirst @x.AuthorMiddle @x.AuthorLast </h6>
+    <p>Publisher: @x.Publisher</p>
+    <p>ISBN: @x.ISBN</p>
+    <p>Category: @x.Category</p>
+    <p>Classification: @x.Classification</p>
+    <p>Price: @x.Price</p>
 </div>
 }

@@ -21,9 +21,6 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
                     </ul>
                 </div>
             </div>
@@ -33,7 +30,9 @@
     <div class="container">
         <h1>@ViewBag.Title</h1>
         <main role="main" class="pb-3">
-            @RenderBody()
+            <div class="text-info">
+                @RenderBody()
+            </div>
         </main>
     </div>
 
