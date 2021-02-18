@@ -141,18 +141,6 @@ namespace Assignment5.Models
                         Classification = "Fiction",
                         Category = "Thrillers",
                         Price = 15.03F,
-                    },
-                    new Project
-                    {
-                        Title = "Practice",
-                        AuthorFirst = "Practice",
-                        AuthorMiddle = "",
-                        AuthorLast = "Practice",
-                        Publisher = "Practice",
-                        ISBN = "Practice",
-                        Classification = "Fiction",
-                        Category = "Thrillers",
-                        Price = 15.03F,
                     }
                 ) ;
 
