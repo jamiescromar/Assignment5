@@ -30,5 +30,7 @@ namespace Assignment5.Models
         public string Category { get; set; }
         [Required]
         public float Price { get; set; }
+        [Required]
+        public int Pages { get; set; }
     }
 }

@@ -33,6 +33,7 @@ namespace Assignment5.Models
                         Classification = "Fiction",
                         Category = "Classic",
                         Price = 9.95F,
+                        Pages = 1488,
                     },
                     new Project
                     {
@@ -45,6 +46,7 @@ namespace Assignment5.Models
                         Classification = "Non-Fiction",
                         Category = "Biography",
                         Price = 14.58F,
+                        Pages = 944,
                     },
                     new Project
                     {
@@ -57,6 +59,7 @@ namespace Assignment5.Models
                         Classification = "Non-Fiction",
                         Category = "Biography",
                         Price = 21.54F,
+                        Pages = 832,
                     },
                     new Project
                     {
@@ -69,6 +72,7 @@ namespace Assignment5.Models
                         Classification = "Non-Fiction",
                         Category = "Biography",
                         Price = 11.61F,
+                        Pages= 864,
                     },
                     new Project
                     {
@@ -81,6 +85,7 @@ namespace Assignment5.Models
                         Classification = "Non-Fiction",
                         Category = "Historical",
                         Price = 13.33F,
+                        Pages = 528,
                     },
                     new Project
                     {
@@ -93,6 +98,7 @@ namespace Assignment5.Models
                         Classification = "Fiction",
                         Category = "Historical Fiction",
                         Price = 15.95F,
+                        Pages = 288,
                     },
                     new Project
                     {
@@ -105,6 +111,7 @@ namespace Assignment5.Models
                         Classification = "Non-Fiction",
                         Category = "Self-Help",
                         Price = 14.99F,
+                        Pages = 304,
                     },
                     new Project
                     {
@@ -117,6 +124,7 @@ namespace Assignment5.Models
                         Classification = "Non-Fiction",
                         Category = "Self-Help",
                         Price = 21.66F,
+                        Pages = 240,
                     },
                     new Project
                     {
@@ -129,6 +137,7 @@ namespace Assignment5.Models
                         Classification = "Non-Fiction",
                         Category = "Business",
                         Price = 29.16F,
+                        Pages = 400,
                     },
                     new Project
                     {
@@ -141,6 +150,46 @@ namespace Assignment5.Models
                         Classification = "Fiction",
                         Category = "Thrillers",
                         Price = 15.03F,
+                        Pages = 642,
+                    },
+                    new Project
+                    {
+                        Title ="The Selection",
+                        AuthorFirst = "Kiera",
+                        AuthorMiddle = "",
+                        AuthorLast = "Cass",
+                        Publisher = "HarperCollins",
+                        ISBN = "978-8868361136",
+                        Classification = "Fantasy Fiction",
+                        Category = "Thrillers",
+                        Price = 9.95F,
+                        Pages = 336,
+                    },
+                    new Project
+                    {
+                        Title = "Harry Potter",
+                        AuthorFirst = "J.",
+                        AuthorMiddle = "K.",
+                        AuthorLast = "Rowling",
+                        Publisher = "Scholastic Corporation",
+                        ISBN = "978-0747532743",
+                        Classification = "Fantasy",
+                        Category = "Thrillers",
+                        Price = 15.00F,
+                        Pages = 223,
+                    },
+                    new Project
+                    {
+                        Title = "The Princess Academy",
+                        AuthorFirst = "Shannon",
+                        AuthorMiddle = "",
+                        AuthorLast = "Hale",
+                        Publisher = "Bloomsbury",
+                        ISBN = "978-0398194743",
+                        Classification = "Fantasy Fiction",
+                        Category = "Novel",
+                        Price = 15.00F,
+                        Pages = 314,
                     }
                 ) ;
 
