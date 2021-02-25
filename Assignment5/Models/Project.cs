@@ -6,10 +6,14 @@ using System.Threading.Tasks;
 
 namespace Assignment5.Models
 {
+    //This is the class that will get the data for each book that will be stored to the database
     public class Project
     {
+        //Set the key for this class and for the database
         [Key]
         [Required]
+        //Make sure that all of the data is required and that it is going to be entered when pushing data to the database
+        //Any changes here can be pushed using migrations
         public int BookID { get; set; }
         [Required]
         public string Title { get; set; }

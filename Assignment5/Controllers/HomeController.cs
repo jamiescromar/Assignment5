@@ -12,6 +12,7 @@ namespace Assignment5.Controllers
 {
     public class HomeController : Controller
     {
+        //Creating variable so that we can have a dynamic web page so that we can view this information and the program will automtically decide the length.
         private readonly ILogger<HomeController> _logger;
 
         private iBooklistRepository _repository;
@@ -29,6 +30,7 @@ namespace Assignment5.Controllers
             //populates the information so that it will be dynamic
             return View(new ProjectListViewModel
             {
+                //This is just like SQL and making it so that we are querying the information based on its length
                 Projects = _repository.Projects
                 .OrderBy(p => p.BookID)
                 .Skip((page - 1) * PageSize)

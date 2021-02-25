@@ -10,15 +10,17 @@ namespace Assignment5.Models
 {
     public class SeedData
     {
+        //This will migrate the database
         public static void EnsurePopulated(IApplicationBuilder application)
         {
             BooklistDbContext context = application.ApplicationServices.CreateScope().ServiceProvider.GetRequiredService<BooklistDbContext>();
-
+            //This will allow us to make migrations if their are any changes.
             if (context.Database.GetPendingMigrations().Any())
             {
                 context.Database.Migrate();
             }
-
+            //THis is going to allow the info to be dynamic
+            //THis is where we are populating the database with information about each project and going to make it so that it is dynamic
             if (!context.Projects.Any())
             {
                 context.Projects.AddRange(

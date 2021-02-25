@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
+    <!--This will show all of the many books with their data. IT also is a header that we are divyig up into other columns-->
     <div class="bg-dark text-white p-lg-1 ">
         <div class="container">
             <span class="navbar-brand mb-lg-n2">ASSIGNMENT 6 - ONLINE BOOKSTORE</span>
@@ -17,7 +18,9 @@
         <div class="row m-1 p-1">
             <div id="header" class="col-3">
                 <h1>Online Bookstore</h1>
+                <h5>Click on the title of a book to viewmore inforamtion!</h5>
             </div>
+            <!--This will allow us to see all of the books organized and in a way that we will be able to have the index acess the bootstrap from this page -->
             <div class="col-9">
                 @RenderBody()
             </div>
