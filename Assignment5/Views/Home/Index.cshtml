@@ -1,20 +1,38 @@
 ﻿@{
     ViewData["Title"] = "Online Bookstore";
 }
-@model IQueryable<Project>
+@model ProjectListViewModel
 
-<header>
-
-</header>
-@foreach (var x in Model)
+@foreach (var x in Model.Projects)
 {
-<div>
-    <h4>Book Title: @x.Title</h4>
-    <h5>Author: @x.AuthorFirst @x.AuthorMiddle @x.AuthorLast </h5>
-    <p>Publisher: @x.Publisher</p>
-    <p>ISBN: @x.ISBN</p>
-    <p>Category: @x.Category</p>
-    <p>Classification: @x.Classification</p>
-    <p>Price: @x.Price</p>
+<div class="card card-outline-primary m-1 p-1">
+    <a class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
+        <h4>
+            @x.Title
+        </h4>
+    </a>
+    <div class="row">
+        <div class="col">
+            <div class="collapse multi-collapse" id="multiCollapseExample1">
+                <div class="card card-body">
+                    <p>Author: @x.AuthorFirst @x.AuthorMiddle @x.AuthorLast</p>
+                    <p>Publisher: @x.Publisher</p>
+                    <p>ISBN: @x.ISBN</p>
+                    <p>Category: @x.Category</p>
+                    <p>Classification: @x.Classification</p>
+                    <p>Price: @x.Price</p>
+                    <p>Pages: @x.Pages</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 </div>
 }
+<!--PAss this the info in the pagemodel view model so that it can access the information dynamically-->
+<div page-model="@Model.PagingInfo" page-action="Index" page-classes-enabled="true" page-class ="btn"
+     page-class-normal ="btn-outlint-dark"
+     page-class-selected="btn-primary"
+     class="btn-group pull-right m-1"></div>
+ 
