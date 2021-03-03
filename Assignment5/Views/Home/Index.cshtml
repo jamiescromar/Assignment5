@@ -5,37 +5,11 @@
 
 @foreach (var x in Model.Projects)
 {
-<div class="card card-outline-primary m-1 p-1">
-    <!--This will make it so that we can click on the book title to see the collapsed informaiton-->
-    <a class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
-        <h4>
-            @x.Title
-        </h4>
-    </a>
-    <!--Made a collapsable pill so that all the information is not instantly clicked on but it can be seen if you click on one to open-->
-    <div class="row">
-        <div class="col">
-            <!--MAke this collapsable so that you have to have the inforamtion appear by clicking on the book title-->
-            <div class="collapse multi-collapse" id="multiCollapseExample1">
-                <div class="card card-body">
-                    <p>Author: @x.AuthorFirst @x.AuthorMiddle @x.AuthorLast</p>
-                    <p>Publisher: @x.Publisher</p>
-                    <p>ISBN: @x.ISBN</p>
-                    <p>Category: @x.Category</p>
-                    <p>Classification: @x.Classification</p>
-                    <p>Price: @x.Price</p>
-                    <p>Pages: @x.Pages</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-</div>
+    <partial name="ProjectSummary" model="x" />
 }
-<!--PAss this the info in the pagemodel view model so that it can access the information dynamically-->
+<!--Pass this the info in the pagemodel view model so that it can access the information dynamically-->
 <div page-model="@Model.PagingInfo" page-action="Index" page-classes-enabled="true" page-class ="btn"
      page-class-normal ="btn-outlint-dark"
-     page-class-selected="btn-primary"
+     page-class-selected="btn-primary" page-url-category="@Model.CurrentCategory"
      class="btn-group pull-right m-1"></div>
  

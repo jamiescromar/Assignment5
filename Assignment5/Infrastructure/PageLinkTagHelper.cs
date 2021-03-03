@@ -29,6 +29,9 @@ namespace Assignment5.Infrastructure
         public PagingInfo PageModel { get; set; }
         public string PageAction { get; set; }
         //adding these will allow us to pull in the bootstrap elements
+        //pairing values together
+        [HtmlAttributeName(DictionaryAttributePrefix = "page-url-")]
+        public Dictionary<string, object> PageUrlValues { get; set; } = new Dictionary<string, object>();
         public bool PageClassesEnabled { get; set; } = false;
         public string PageClass { get; set; }
         public string PageClassNormal { get; set; }
@@ -45,7 +48,10 @@ namespace Assignment5.Infrastructure
             {
                 //go in and build an a tag and the action so that when we append it will go to the link and append it to result
                 TagBuilder tag = new TagBuilder("a");
-                tag.Attributes["href"] = urlHelper.Action(PageAction, new { page = i });
+                PageUrlValues["page"] = i;
+                tag.Attributes["href"] = urlHelper.Action(PageAction,
+                    PageUrlValues);
+                //need to add more for all of our endpoint that we created
 
                 if (PageClassesEnabled)
                 {
