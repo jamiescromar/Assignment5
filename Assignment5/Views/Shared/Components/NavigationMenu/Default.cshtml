@@ -4,6 +4,7 @@
 @{
 }
 @model IEnumerable<string>
+
 <!--This is the view that will show the information that is selceted if we are filtering by a category-->
 <a class="btn btn-block btn-outline-secondary" asp-action="Index" asp-controller="Home" asp-route-category="">Home</a>
 
@@ -13,7 +14,8 @@
     <a class="btn btn-block @(category ==ViewBag.SelectedCategory ? "btn-primary" : "btn-outline-secondary")"
        asp-action="Index" asp-controller="Home"
        asp-route-category="@category"
-       asp-route-page="1">@category
+       asp-route-pageNum="1">
+        @category
     </a>
 }
 

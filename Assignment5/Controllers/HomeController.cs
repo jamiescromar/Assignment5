@@ -25,7 +25,7 @@ namespace Assignment5.Controllers
             _repository = repository;
         }
 
-        public IActionResult Index(string category, int page = 1)
+        public IActionResult Index(string category, int pageNum = 1)
         {
             //populates the information so that it will be dynamic
             return View(new ProjectListViewModel
@@ -35,12 +35,12 @@ namespace Assignment5.Controllers
                 //if category is null or somebody has pased in something for category they will assign that
                 .Where(p => category == null || p.Category == category )
                 .OrderBy(p => p.BookID)
-                .Skip((page - 1) * PageSize)
+                .Skip((pageNum - 1) * PageSize)
                 .Take(PageSize)
                 ,
                 PagingInfo = new PagingInfo
                 {
-                    CurrentPage = page,
+                    CurrentPage = pageNum,
                     ItemsPerPage = PageSize,
                     //THis will make sure that the pages are correct if you are filtering by category
                     TotalNumItems =category == null ? _repository.Projects.Count(): 

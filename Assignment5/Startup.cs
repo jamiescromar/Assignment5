@@ -1,6 +1,7 @@
 using Assignment5.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -29,11 +30,18 @@ namespace Assignment5
 
             services.AddDbContext<BooklistDbContext>(options =>
             {
-                options.UseSqlServer(Configuration["ConnectionStrings:BooklistConnection"]);
+                options.UseSqlite(Configuration["ConnectionStrings:BooklistConnection"]);
             });
 
             //Each request will get its own repository request
             services.AddScoped<iBooklistRepository, EFBooklistRepository>();
+
+            services.AddRazorPages();
+            //Need add in services in order to maintain the cashe so that you can add things to cart and retain that info
+            services.AddDistributedMemoryCache();
+            services.AddSession();
+            services.AddScoped<Cart>(sp => SessionCart.GetCart(sp));
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,6 +60,9 @@ namespace Assignment5
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
+            //When user clicks on this site it will set up a session so that the stuff in the cart will sit there while going around the site
+            app.UseSession();
+
             app.UseRouting();
 
             app.UseAuthorization();
@@ -60,12 +71,12 @@ namespace Assignment5
             {
                 endpoints.MapControllerRoute(
                     "catpage",
-                    "{category}/{page:int}",
+                    "{category}/{pageNum:int}",
                     new { Controller = "Home", action = "Index" }
                     );
                 endpoints.MapControllerRoute(
                     "page",
-                    "{page:int}",
+                    "{pageNum:int}",
                     new { Controller = "Home", action = "Index" }
                     );
                 endpoints.MapControllerRoute(
@@ -75,10 +86,13 @@ namespace Assignment5
                     );
                 endpoints.MapControllerRoute(
                     "pagination",
-                    "Books/P{page}",
+                    "Books/P{pageNum}",
                     new { Controller = "Home", action = "Index" });
 
                 endpoints.MapDefaultControllerRoute();
+
+                //need to add this to make sure that razor pages can work in the project
+                endpoints.MapRazorPages();
                     
             });
 

@@ -48,7 +48,7 @@ namespace Assignment5.Infrastructure
             {
                 //go in and build an a tag and the action so that when we append it will go to the link and append it to result
                 TagBuilder tag = new TagBuilder("a");
-                PageUrlValues["page"] = i;
+                PageUrlValues["pageNum"] = i;
                 tag.Attributes["href"] = urlHelper.Action(PageAction,
                     PageUrlValues);
                 //need to add more for all of our endpoint that we created

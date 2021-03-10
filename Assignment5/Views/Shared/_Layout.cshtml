@@ -6,12 +6,18 @@
     <title>@ViewData["Title"] - Assignment 6</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link href="/lib/font-awesome/css/all.min.css" rel="stylesheet" />
 </head>
 <body>
     <!--This will show all of the many books with their data. IT also is a header that we are divyig up into other columns-->
     <div class="bg-dark text-white p-lg-1 ">
-        <div class="container">
-            <span class="navbar-brand mb-lg-n2">ASSIGNMENT 6 - ONLINE BOOKSTORE</span>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col navbar-brand">ASSIGNMENT 8 - ONLINE BOOKSTORE</div>
+                <div class="col-6 text-right">
+                    <vc:cart-summary/>
+                </div>
+            </div>
         </div>
     </div>
     <div class="container">
